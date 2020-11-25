@@ -13,9 +13,7 @@
     crossorigin="anonymous"></script>
 
     <script src="https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js"></script>
-    <script>
-        window.Mercadopago.setPublishableKey("TEST-a58d5f48-bdfb-43fc-b912-151539ea9fea");
-    </script>
+    <script type="text/javascript" src="js/index.js"></script>
               
 
     <link rel="stylesheet" href="./assets/category-landing.css" media="screen, print">
