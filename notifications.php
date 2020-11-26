@@ -1,25 +1,15 @@
 <?php
 
-//set date time if not already done elsewhere
-date_default_timezone_set('America/Los_Angeles');
-
-//set date/time for entry
-$time_stamp = date('m\-d\-Y\-h:iA');
-
-//set file name and location
-$log = "assets/logs/log.txt";
-
-//open or create log.txt
-//[see docs for more modes](http://php.net/manual/en/function.fopen.php)
-$fp = fopen($log,"a+");
-
-//append text and time stamp to log.txt (the double \n's are to give readable space inbetween entries.) 
-fwrite($fp, $time_stamp . "\n" . "hello world" . "\n\n");
-
-//close log file
-fclose($fp);
-
-//You can also use unlink() to delete file if needed
+$post_data = $_GET['type'];
+if (!empty($post_data)) {
+    $dir = '/files';
+    $file = 'log';
+    $filename = $dir.$file.'.txt';
+    $handle = fopen($filename, "w");
+    fwrite($handle, $post_data);
+    fclose($handle);
+    echo $file;
+}
 
 
             // $log = "assets/log.txt";
