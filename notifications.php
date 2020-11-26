@@ -18,7 +18,7 @@
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
         'Accept: application/vnd.github.v3+json',
-        'Authorization: token b70fb8587cf69ae47a974b92ef089ec2655efc8c',
+        'Authorization: token d99d468307831ccbe416d669ede67ac963df06ef',
         'User-Agent: frayle023@gmail.com'));
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
