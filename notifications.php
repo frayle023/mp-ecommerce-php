@@ -4,8 +4,8 @@
 
     switch($_POST["type"]) {
         case "payment":
-            $payment = MercadoPago\Payment.find_by_id($_POST["id"]);
-            $file = fopen("notifications.txt", "a");
+            // $payment = MercadoPago\Payment.find_by_id($_POST["id"]);
+            $file = fopen("notifications.txt", "w");
             $txt = '';
             foreach($_POST as $key => $value)
             {
@@ -16,8 +16,8 @@
             header("HTTP/1.1 200 OK");
             break;
         case "plan":
-            $plan = MercadoPago\Plan.find_by_id($_POST["id"]);
-            $file = fopen("notifications.txt", "a");
+            // $plan = MercadoPago\Plan.find_by_id($_POST["id"]);
+            $file = fopen("notifications.txt", "w");
             $txt = '';
             foreach($_POST as $key => $value)
             {
@@ -28,8 +28,8 @@
             header("HTTP/1.1 200 OK");
             break;
         case "subscription":
-            $plan = MercadoPago\Subscription.find_by_id($_POST["id"]);
-            $file = fopen("notifications.txt", "a");
+            // $plan = MercadoPago\Subscription.find_by_id($_POST["id"]);
+            $file = fopen("notifications.txt", "w");
             $txt = '';
             foreach($_POST as $key => $value)
             {
@@ -40,8 +40,8 @@
             header("HTTP/1.1 200 OK");
             break;
         case "invoice":
-            $plan = MercadoPago\Invoice.find_by_id($_POST["id"]);
-            $file = fopen("notifications.txt", "a");
+            // $plan = MercadoPago\Invoice.find_by_id($_POST["id"]);
+            $file = fopen("notifications.txt", "w");
             $txt = '';
             foreach($_POST as $key => $value)
             {
