@@ -146,7 +146,9 @@
                                         $item->id = '1234';
                                         $item->title = $_POST['title'];
                                         $item->description = 'Dispositivo móvil de Tienda e-commerce';
-                                        $item->picture_url = $_POST['img'];
+                                        $path = substr($_POST['img'], 0, 1);
+                                        $img = 'https://frayle023-mp-ecommerce-php.heroku.app'.$path; 
+                                        $item->picture_url = $img;
                                         $item->quantity = $_POST['unit'];
                                         $item->unit_price = $_POST['price'];
                                         $item->currency_id = 'MXN';
