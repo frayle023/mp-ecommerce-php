@@ -191,8 +191,9 @@
 
                                         $preference->save();
                                     ?>
-                                    <button href="<?php echo $preference->init_point; ?>" class="mercadopago-button">Pagar la compra</button>
-                                    
+                                    <a href="<?php echo $preference->init_point; ?>">
+                                    <button type="submit" class="mercadopago-button">Pagar la compra</button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
