@@ -5,7 +5,7 @@
     switch($_POST["type"]) {
         case "payment":
             // $payment = MercadoPago\Payment.find_by_id($_POST["id"]);
-            $log = 'log.txt';
+            $log = 'assets/logs/log.txt';
             $file = fopen($log, "a+");
             $txt = '';
             foreach($_POST as $key => $value)
@@ -18,7 +18,7 @@
             break;
         case "plan":
             // $plan = MercadoPago\Plan.find_by_id($_POST["id"]);
-            $log = 'log.txt';
+            $log = 'assets/logs/log.txt';
             $file = fopen($log, "a+");
             $txt = '';
             foreach($_POST as $key => $value)
@@ -31,7 +31,7 @@
             break;
         case "subscription":
             // $plan = MercadoPago\Subscription.find_by_id($_POST["id"]);
-            $log = 'log.txt';
+            $log = 'assets/logs/log.txt';
             $file = fopen($log, "a+");
             $txt = '';
             foreach($_POST as $key => $value)
@@ -44,7 +44,7 @@
             break;
         case "invoice":
             // $plan = MercadoPago\Invoice.find_by_id($_POST["id"]);
-            $log = 'log.txt';
+            $log = 'assets/logs/log.txt';
             $file = fopen($log, "a+");
             $txt = '';
             foreach($_POST as $key => $value)
