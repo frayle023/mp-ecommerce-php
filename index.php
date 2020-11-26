@@ -13,6 +13,7 @@
     crossorigin="anonymous"></script>
 
     <script src="https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js"></script>
+    <script src="https://www.mercadopago.com/v2/security.js" view="home"></script>
     <script type="text/javascript" src="js/index.js" defer></script>
               
 
