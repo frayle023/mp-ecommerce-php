@@ -2,7 +2,7 @@
 
     $data = "Texto de prueba";
     $data = base64_encode($data);
-    
+
     $curl_url = 'https://api.github.com/repos/frayle023/mp-ecommerce-php/contents/logs.txt';
     $ch = curl_init($curl_url);
 
@@ -14,5 +14,5 @@
     $response = curl_exec($ch);
     curl_close($ch);
 
-    $response = json_decode($response);
+    //$response = json_decode($response);
     echo $response;
