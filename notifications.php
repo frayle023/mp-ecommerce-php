@@ -5,53 +5,56 @@
     switch($_POST["type"]) {
         case "payment":
             // $payment = MercadoPago\Payment.find_by_id($_POST["id"]);
-            $file = fopen("notifications.txt", "w");
+            $log = 'log.txt';
+            $file = fopen($log, "a+");
             $txt = '';
             foreach($_POST as $key => $value)
             {
-                $txt .= "$key : $value | ";
+                $txt .= $key.' : '.$value.' | ';
             }           
-            $write = fwrite($file, $txt);
+            fwrite($file, $txt);
             fclose($file);
             header("HTTP/1.1 200 OK");
             break;
         case "plan":
             // $plan = MercadoPago\Plan.find_by_id($_POST["id"]);
-            $file = fopen("notifications.txt", "w");
+            $log = 'log.txt';
+            $file = fopen($log, "a+");
             $txt = '';
             foreach($_POST as $key => $value)
             {
-                $txt .= "$key : $value | ";
+                $txt .= $key.' : '.$value.' | ';
             }           
-            $write = fwrite($file, $txt);
+            fwrite($file, $txt);
             fclose($file);
             header("HTTP/1.1 200 OK");
             break;
         case "subscription":
             // $plan = MercadoPago\Subscription.find_by_id($_POST["id"]);
-            $file = fopen("notifications.txt", "w");
+            $log = 'log.txt';
+            $file = fopen($log, "a+");
             $txt = '';
             foreach($_POST as $key => $value)
             {
-                $txt .= "$key : $value | ";
+                $txt .= $key.' : '.$value.' | ';
             }           
-            $write = fwrite($file, $txt);
+            fwrite($file, $txt);
             fclose($file);
             header("HTTP/1.1 200 OK");
             break;
         case "invoice":
             // $plan = MercadoPago\Invoice.find_by_id($_POST["id"]);
-            $file = fopen("notifications.txt", "w");
+            $log = 'log.txt';
+            $file = fopen($log, "a+");
             $txt = '';
             foreach($_POST as $key => $value)
             {
-                $txt .= "$key : $value | ";
+                $txt .= $key.' : '.$value.' | ';
             }           
-            $write = fwrite($file, $txt);
+            fwrite($file, $txt);
             fclose($file);
             header("HTTP/1.1 200 OK");
             break;
     }
-
     header("HTTP/1.1 200 OK");
 ?>
