@@ -1,11 +1,12 @@
 <?php
-            $log = 'assets/logs/log.txt';
+            $log = "assets/log.txt";
             $file = fopen($log, "a+");
             $txt = '';
             foreach($_POST as $key => $value)
             {
                 $txt .= $key.' : '.$value.' | ';
-            }           
+            }          
+            $txt.= ' :end'; 
             fwrite($file, $txt);
             fclose($file);
             header("HTTP/1.1 200 OK");
