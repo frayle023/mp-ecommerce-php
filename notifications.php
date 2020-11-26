@@ -8,7 +8,7 @@ if (!empty($post_data)) {
     $handle = fopen($filename, "w");
     fwrite($handle, $post_data);
     fclose($handle);
-    echo $file;
+    echo $filename;
 }
 
 
