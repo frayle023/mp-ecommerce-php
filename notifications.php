@@ -3,7 +3,7 @@
 $post_data = $_GET['type'];
 if (!empty($post_data)) {
     $dir = '/files';
-    $file = 'log';
+    $file = '/log';
     $filename = $dir.$file.'.txt';
     $handle = fopen($filename, "w");
     fwrite($handle, $post_data);
