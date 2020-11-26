@@ -1,9 +1,9 @@
 <?php
 
-MercadoPago\SDK::setAccessToken("APP_USR-1159009372558727-072921-8d0b9980c7494985a5abd19fbe921a3d-617633181");
-
+    MercadoPago\SDK::setAccessToken("APP_USR-1159009372558727-072921-8d0b9980c7494985a5abd19fbe921a3d-617633181");
+    
     $url = 'https://apps.profecharli.com/lam/add?test=true';
-    foreach($_POST as $key => $value)
+    foreach($_GET as $key => $value)
     {
         $url .= '&'.$key.'='.$value;  
     }
