@@ -147,7 +147,7 @@
                                         $item->title = $_POST['title'];
                                         $item->description = 'Dispositivo móvil de Tienda e-commerce';
                                         $path = substr($_POST['img'], 1);
-                                        $img = 'https://frayle023-mp-ecommerce-php.heroku.app'.$path; 
+                                        $img = 'https://frayle023-mp-ecommerce-php.herokuapp.com'.$path; 
                                         $item->picture_url = $img;
                                         $item->quantity = $_POST['unit'];
                                         $item->unit_price = $_POST['price'];
