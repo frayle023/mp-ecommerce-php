@@ -1,9 +1,8 @@
 <?php
 
-    $data = array(
-        'val1' => 1,
-        'val2' => "2"
-    );
+    $data = "Texto de prueba";
+    $data = base64_encode($data);
+    
     $curl_url = 'https://api.github.com/repos/frayle023/mp-ecommerce-php/contents/logs.txt';
     $ch = curl_init($curl_url);
 
