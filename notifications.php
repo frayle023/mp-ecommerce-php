@@ -9,6 +9,7 @@
 
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+        "Content-Type: application/json",
         "Authorization: token $token",
         "User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 YaBrowser/19.9.3.314 Yowser/2.5 Safari/573.36"));
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
