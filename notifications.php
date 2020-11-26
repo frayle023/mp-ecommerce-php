@@ -6,7 +6,7 @@
         'sha' => 'e69de29bb2d1d6434b8b29ae775ad8c2e48c5391',
         'message' => 'PHP Commit',
         'content' => base64_encode($file),
-        'commiter' => array(
+        'committer' => array(
             'name' => 'Charli',
             'email' => 'frayle023@gmail.com'
         )
