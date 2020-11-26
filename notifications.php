@@ -1,5 +1,5 @@
 <?php
-    $token = 'bc7ae2fc358a6d8f91d5ada5f35135f5723c94fb';
+    $token = '16951e298000feb746e50d1f09e452d4c78c1536';
     $auth = "Authorization: OAuth $token";
     $file = "logs.txt";
     $data = array(
