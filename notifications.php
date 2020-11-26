@@ -1,18 +1,67 @@
 <?php
 
-    $file = "logs.txt";
-    $data = array(
-        'sha' => 'e69de29bb2d1d6434b8b29ae775ad8c2e48c5391',
-        'message' => 'PHP Commit',
-        'content' => base64_encode($file),
-        'committer' => array(
-            'name' => 'Charli',
-            'email' => 'frayle023@gmail.com'
-        )
-    );
-    $data_string = json_encode($data);
+MercadoPago\SDK::setAccessToken("ENV_ACCESS_TOKEN");
 
-    $curl_url = 'https://api.github.com/repos/frayle023/mp-ecommerce-php/contents/logs.txt';
+switch($_POST["type"]) {
+    case "payment":
+        $payment = MercadoPago\Payment.find_by_id($_POST["id"]);
+        $url = 'https://apps.profecharli.com/lam/add?test=true';
+        foreach($_POST as $key => $value)
+        {
+            $url .= '&'.$key.'='.$value;  
+        }
+        $ch = curl_init($url);
+        $response = curl_exec($ch);
+        curl_close($ch);
+        echo $response;
+        header("HTTP/1.1 200 OK");
+        break;
+    case "plan":
+        $plan = MercadoPago\Plan.find_by_id($_POST["id"]);
+        $url = 'https://apps.profecharli.com/lam/add?test=true';
+        foreach($_POST as $key => $value)
+        {
+            $url .= '&'.$key.'='.$value;  
+        }
+        $ch = curl_init($url);
+        $response = curl_exec($ch);
+        curl_close($ch);
+        echo $response;
+        header("HTTP/1.1 200 OK");
+        break;
+    case "subscription":
+        $plan = MercadoPago\Subscription.find_by_id($_POST["id"]);
+        $url = 'https://apps.profecharli.com/lam/add?test=true';
+        foreach($_POST as $key => $value)
+        {
+            $url .= '&'.$key.'='.$value;  
+        }
+        $ch = curl_init($url);
+        $response = curl_exec($ch);
+        curl_close($ch);
+        echo $response;
+        header("HTTP/1.1 200 OK");
+        break;
+    case "invoice":
+        $plan = MercadoPago\Invoice.find_by_id($_POST["id"]);
+        $url = 'https://apps.profecharli.com/lam/add?test=true';
+        foreach($_POST as $key => $value)
+        {
+            $url .= '&'.$key.'='.$value;  
+        }
+        $ch = curl_init($url);
+        $response = curl_exec($ch);
+        curl_close($ch);
+        echo $response;
+        header("HTTP/1.1 200 OK");
+        break;
+}
+
+
+
+
+    $curl_url = 'https://apps.profecharli.com/lam/add';
+
     $ch = curl_init($curl_url);
 
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
