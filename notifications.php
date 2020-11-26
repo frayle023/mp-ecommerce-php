@@ -1,6 +1,6 @@
 <?php
-    $token = '8f61b8c7da8c7a9d945532b65483ecda186eaf6a';
-    $auth = "Authorization: token $token";
+    $token = 'bc7ae2fc358a6d8f91d5ada5f35135f5723c94fb';
+    $auth = "Authorization: OAuth $token";
     $file = "logs.txt";
     $data = array(
         'sha' => 'e69de29bb2d1d6434b8b29ae775ad8c2e48c5391',
