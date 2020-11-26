@@ -6,7 +6,11 @@
         case "payment":
             $payment = MercadoPago\Payment.find_by_id($_POST["id"]);
             $file = fopen("notificaciones.txt", "w");
-            fwrite($file, $payment . PHP_EOL);            
+            foreach($_POST as $key => $value)
+            {
+                $txt = "$key : $value |";
+                fwrite($file, $txt); 
+            }           
             fclose($file);
             break;
         case "plan":
