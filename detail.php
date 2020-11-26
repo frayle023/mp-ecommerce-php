@@ -134,7 +134,63 @@
                                             <?php echo "$" . $_POST['unit'] ?>
                                         </h3>
                                     </div>
-                                    <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>
+                                    <?php
+                                        require __DIR__ .  '/vendor/autoload.php';
+                                        MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
+                                        MercadoPago\SDK::setAccessToken('APP_USR-1159009372558727-072921-8d0b9980c7494985a5abd19fbe921a3d-617633181');
+                                        
+                                        $preference = new MercadoPago\Preference();
+                                        
+                                        $item = new MercadoPago\Item();
+                                        $item->id = '1234';
+                                        $item->title = $_POST['title'];
+                                        $item->description = 'Dispositivo móvil de Tienda e-commerce';
+                                        $item->picture_url = $_POST['img'];
+                                        $item->quantity = $_POST['unit'];
+                                        $item->unit_price = $_POST['price'];
+                                        $item->currency_id = 'MXN';
+                                        $preference->items = array($item);
+                                        
+                                        $preference->external_reference = 'frayle023@gmail.com';
+                                        
+                                        $payer = new MercadoPago\Payer();
+                                        $payer->name = "Lalo";
+                                        $payer->surname = "Landa";
+                                        $payer->email = "test_user_81131286@testuser.com";
+                                        $payer->phone = array(
+                                            "area_code" => "52",
+                                            "number" => "5549737300"
+                                        );
+                                        $payer->address = array(
+                                            "street_name" => "Insurgentes Sur",
+                                            "street_number" => 1602,
+                                            "zip_code" => "0394​0"
+                                        );
+
+                                        $preference->payer = $payer;
+
+                                        $preference->payment_methods = array(
+                                            "excluded_payment_methods" => array(
+                                                array("id" => "amex")
+                                              ),
+                                              "excluded_payment_types" => array(
+                                                array("id" => "atm")
+                                              ),
+                                              "installments" => 6
+                                        );
+
+                                        $preference->back_urls = array(
+                                            "success" => "https://frayle023-mp-ecommerce-php.herokuapp.com/success.php",
+                                            "failure" => "https://frayle023-mp-ecommerce-php.herokuapp.com/failure.php",
+                                            "pending" => "https://frayle023-mp-ecommerce-php.herokuapp.com/pending.php"
+                                        );
+                                        $preference->auto_return = "approved";
+
+                                        $preference->notification_url = 'https://frayle023-mp-ecommerce-php.herokuapp.com/notifications.php';
+
+                                        $preference->save();
+                                    ?>
+                                    <a href="<?php echo $preference->init_point; ?>">Pagar la compra</a>
                                 </div>
                             </div>
                         </div>

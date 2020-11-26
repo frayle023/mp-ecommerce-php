@@ -1,1 +1,1 @@
-window.Mercadopago.setPublishableKey("TEST-a58d5f48-bdfb-43fc-b912-151539ea9fea");
+window.Mercadopago.setPublishableKey("APP_USR-d81f7be9-ee11-4ff0-bf4e-20c36981d7bf");
