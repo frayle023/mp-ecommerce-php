@@ -1,5 +1,6 @@
 <?php
 
+    $token = '008b13dbf6f8d087c4595fc16c21fe3f5c2432bd';
     $data = "Texto de prueba";
     $data = base64_encode($data);
 
@@ -7,7 +8,7 @@
     $ch = curl_init($curl_url);
 
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array("Authorization: token $token"));
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 
