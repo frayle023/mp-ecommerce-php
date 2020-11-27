@@ -7,7 +7,7 @@ MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
 
     $json = file_get_contents('php://input');
     $data = json_decode($json);
-
+    $code = json_encode($json);
     
 
     //echo var_dump($data);
@@ -18,7 +18,7 @@ MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
     //     $txt .= $key.' : '.$value. ' | ';
     // }
     $previo = file_get_contents('logs.txt');
-    $nuevo = $previo.PHP_EOL.$data;
+    $nuevo = $previo.PHP_EOL.$code;
     file_put_contents('logs.txt', $nuevo);
     header("HTTP/1.1 200 OK"); 
 
