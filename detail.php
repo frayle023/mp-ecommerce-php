@@ -165,9 +165,9 @@
                                             "number" => "5549737300"
                                         );
                                         $payer->address = array(
+                                            "zip_code" => "0394​0",
                                             "street_name" => "Insurgentes Sur",
-                                            "street_number" => 1602,
-                                            "zip_code" => "0394​0"
+                                            "street_number" => 1602
                                         );
 
                                         $preference->payer = $payer;
