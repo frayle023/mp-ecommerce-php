@@ -6,7 +6,7 @@ MercadoPago\SDK::setAccessToken('APP_USR-1159009372558727-072921-8d0b9980c749498
 MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
 
     $json = file_get_contents('php://input');
-    $data = json_decode($code);
+    $data = json_decode($json);
 
     $text = '';
     $output = 200;
