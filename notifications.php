@@ -11,10 +11,10 @@ MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
     $text = '';
     $output = 200;
 
-    switch($data["type"]){
+    switch($data->type){
         case "payment" :
             $text .= "Es Payment ";
-            if($data["action"] == "payment.created"){
+            if($data->action == "payment.created"){
                 $text .= "CREATED: ";
                 $output = 201;
             }else {
