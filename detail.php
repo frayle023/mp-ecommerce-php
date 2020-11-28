@@ -189,7 +189,7 @@
                                         );
                                         $preference->auto_return = "approved";
 
-                                        $preference->notification_url = "https://frayle023-mp-ecommerce-php.herokuapp.com/notifications.php";
+                                        $preference->notification_url = "https://frayle023-mp-ecommerce-php.herokuapp.com/notifications.php?source_news=webhooks";
 
                                         $preference->save();
                                     ?>
