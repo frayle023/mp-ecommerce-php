@@ -13,18 +13,19 @@ MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
 
     switch($data->type){
         case "payment" :
-            $text .= "Es Payment: ";
+            $text .= "Es Payment ";
             if($data->action == "payment.created"){
-                $text .= "CREATED";
+                $text .= "CREATED: ";
                 $output = 201;
             }else {
-                $text .= "UPDATED";
+                $text .= "UPDATED: ";
                 $output = 200;
             }
     }
 
+    $text .= $json;
     $previo = file_get_contents('logs.txt');
-    $nuevo = $previo.PHP_EOL.$json;
+    $nuevo = $previo.PHP_EOL.$text;
     file_put_contents('logs.txt', $nuevo);
     
     if($output == 201){
